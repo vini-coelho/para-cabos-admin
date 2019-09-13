@@ -18,9 +18,6 @@ export default () =>
             <Link style={{ textDecoration: 'none' }} to='/newproduct'>
                 <span>Cadastrar produto</span>
             </Link>
-            <Link style={{ textDecoration: 'none' }} to='/users'>
-                <span>Requisições de usuário</span>
-            </Link>
             <Link style={{ textDecoration: 'none' }} to='/orcamentos'>
                 <span>Orçamentos</span>
             </Link>
