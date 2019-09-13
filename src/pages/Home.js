@@ -22,8 +22,7 @@ export default class Home extends Component {
                 {this.state.data.map(item => {
                 const [ reais, cents ] = parseFloat(item.price).toFixed(2).toString().split('.');
                 return (
-                    <article key={item.id}>
-                        <section>
+                    <article key={item.id}> 
                             <header>
                                 <div className="product-info">
                                     <strong>{item.name}</strong>
@@ -31,7 +30,6 @@ export default class Home extends Component {
                                 </div>
                             </header>
                             <img alt='a' src={`https://para-cabos-backend.herokuapp.com/files/resized/${item.image}`}/>
-                        </section>
                     </article>
                 )})}
             </div>

@@ -48,31 +48,32 @@ export default class Orcamentos extends Component {
         
 
         return (
-            <div id="post-list">
+            <div id="po-list">
                 {this.state.users.length && this.state.data.length ? this.state.data.map(item => {  
                     const [ user ] = this.state.users.filter(user => user.id === item.instid)
                     return (
                     <article key={Math.random()}>
-                        <section>
+                        <section >
                         
-                        <div className="orc-info">
-                            <strong>Usuário: {user.username}</strong>
-                            <span>Total: R$ {item.total.toFixed(2).toString().split('.').join(',')}</span>
-                        </div>
+                            <div className="orc-info">
+                                <strong>Usuário: {user.username}</strong>
+                                <span>Total: R$ {item.total.toFixed(2).toString().split('.').join(',')}</span>
+                            </div>
 
-                        <div className="orc-info">
-                            <strong>Lista de Produtos:</strong>
-                            <button 
-                            onClick={() => this.toggleItem(item.id)}
-                            >Mostrar</button>
-                        </div>
-
-                        {!this.state.hiddenItems.includes(item.id) ? 
-                        <div className="product-list" > 
-                            <ProductList data={JSON.parse(item.produtos)} />
-                        </div> : null }
-                            
+                            <div className="list-title">
+                                <strong>Lista de Produtos:</strong>
+                                <button 
+                                onClick={() => this.toggleItem(item.id)}
+                                >Mostrar</button>
+                            </div>
                         </section>
+
+                        <div className='lista'>
+                            {!this.state.hiddenItems.includes(item.id) ? 
+                            <ProductList data={JSON.parse(item.produtos)} />
+                            : null }
+                        </div>
+                        
                     </article>
                 )}) : null }
             </div>

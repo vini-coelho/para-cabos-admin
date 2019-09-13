@@ -1,14 +1,22 @@
 #post-list {
+ 
     display: flex;
+
     flex-direction: column;
+    
     align-items: center;
+    
 }
 
 #post-list article {
+    width: 50%;
     background-color: #fff;
     
     margin-top: 10px;
     border: 1px solid #ddd;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #post-list article header {
@@ -25,4 +33,13 @@
 
 #post-list article .product-info strong {
     font-size: 16px;
+}
+
+img {
+    display: block;
+    max-width:500px;
+    max-height:800px;
+    width: auto;
+    height: auto;
+    align-self: center;
 }

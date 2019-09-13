@@ -1,31 +1,54 @@
-#post-list {
+#po-list {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#post-list article {
+#po-list article {
+    margin-top: 10px;
+    
+    width: 50%;
     background-color: #fff;
     
-    margin-top: 10px;
+   
     border: 1px solid #ddd;
 }
 
-#post-list article header {
+#po-list article header {
+    
     padding: 10px;
     border-bottom: 1px solid #ddd;
     background-color: #033b5c;
     color: #fff;
 }
 
-#post-list article .orc-info {
+#po-list article .orc-info {
 
-    padding: 20px;
+    padding: 13px;
+
+    background-color: #033b5c;
+    color: #fff;
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-#post-list article .orc-info strong {
+#po-list article .orc-info strong {
     font-size: 16px;
 }
+
+#po-list article .list-title {
+    padding: 10px;
+    margin: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#po-list article .lista {
+   background-color: transparent;
+   margin: 0px;
+}
+

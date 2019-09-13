@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import api from '../services/api';
 
-import './Home.css'
+import './ProductList.css'
 
 export default class Home extends Component {
 
@@ -10,31 +10,34 @@ export default class Home extends Component {
         super(props)
         this.state = {
             data: [],
+            productsQtd: []
         }
     }
 
     async componentDidMount(){
         const productsIds = this.props.data.map(item => item.id)
-        console.log(this.props.data.map(item => item.id))
+        const productsQtd = this.props.data.map(item => item.qtd)
         const response = await api.post('products/byid', { ids: productsIds });
-        this.setState({ data: response.data })
+        this.setState({ data: response.data, productsQtd })
     }
 
     render() {
         return (
-            <div id="post-list">
-                {this.state.data.map(item => {
+            <div id="p-list">
+                {this.state.data.map((item, index) => {
                 const [ reais, cents ] = parseFloat(item.price).toFixed(2).toString().split('.');
                 return (
                     <article key={item.id}>
                         <section>
                             <header>
-                                <div className="product-info">
-                                    <strong>{item.name}</strong>
-                                    <span>Preço: R$ {reais},{cents}</span>
+                                <div className="info">
+                                    <div className="nome-preco">
+                                        <strong>{item.name}</strong>
+                                        <span>Preço: R$ {reais},{cents}</span>
+                                    </div>
+                                    <span>x {this.state.productsQtd[index]}</span>
                                 </div>
                             </header>
-                            <img alt='a' src={`https://para-cabos-backend.herokuapp.com/files/resized/${item.image}`}/>
                         </section>
                     </article>
                 )})}
