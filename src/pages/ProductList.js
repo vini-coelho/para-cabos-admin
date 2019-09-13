@@ -6,14 +6,18 @@ import './Home.css'
 
 export default class Home extends Component {
 
-    state = {
-        data: [],
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: [],
+        }
     }
 
     async componentDidMount(){
-        const response = await api.get('products');
+        const productsIds = this.props.data.map(item => item.id)
+        console.log(this.props.data.map(item => item.id))
+        const response = await api.post('products/byid', { ids: productsIds });
         this.setState({ data: response.data })
-        console.log(response)
     }
 
     render() {
