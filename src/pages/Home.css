@@ -1,0 +1,28 @@
+#post-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#post-list article {
+    background-color: #fff;
+    
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+#post-list article header {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #033b5c;
+    color: #fff;
+}
+
+#post-list article .product-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+#post-list article .product-info strong {
+    font-size: 16px;
+}

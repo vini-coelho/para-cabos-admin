@@ -1,0 +1,30 @@
+header#main-header {
+    background: #033b5c;
+    height: 72px;
+    border-bottom: 1px solid #DDD;
+}
+
+header#main-header .header-content {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    height: 72px;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header#main-header .header-content img {
+    height:72px;
+}
+
+header#main-header .header-content span {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+}
+header#main-header .header-content span:hover {
+    color: #1c6a97;
+}
