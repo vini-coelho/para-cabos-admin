@@ -9,6 +9,8 @@
     
 }
 
+
+
 #p-list article {
     width: 100%;
    
@@ -19,8 +21,18 @@
     flex-direction: column;
 }
 
-#p-list article header {
+#p-list article section {
+    margin: 0px 0px 0px 0px;
+    background-color: #f3f3f3;
+    border: 0px 0px 0px 0px;
+}
+
+#p-list article .header {
     padding: 10px;
+
+    border: none;
+
+    
     
     background-color: transparent; 
 
@@ -28,9 +40,12 @@
 }
 
 #p-list article .info {
+
+    margin: 0px 0px 0px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 #p-list article .info strong {

@@ -14,11 +14,14 @@ export default class Home extends Component {
         }
     }
 
-    async componentDidMount(){
+    componentDidMount(){
         const productsIds = this.props.data.map(item => item.id)
         const productsQtd = this.props.data.map(item => item.qtd)
-        const response = await api.post('products/byid', { ids: productsIds });
-        this.setState({ data: response.data, productsQtd })
+
+        api.post('products/byid', { ids: productsIds }).then((resultado) => {
+            this.setState({ data: resultado.data, productsQtd })
+        })
+        
     }
 
     render() {
@@ -29,7 +32,7 @@ export default class Home extends Component {
                 return (
                     <article key={item.id}>
                         <section>
-                            <header>
+                            <header className= "header">
                                 <div className="info">
                                     <div className="nome-preco">
                                         <strong>{item.name}</strong>

@@ -13,13 +13,13 @@ export default () =>
                 <img src={logo} alt="Home"/>
             </Link>
             <Link style={{ textDecoration: 'none' }} to='/'>
-                <span>Lista de produtos</span>
+                <span>LISTA DE PRODUTOS</span>
             </Link>
             <Link style={{ textDecoration: 'none' }} to='/newproduct'>
-                <span>Cadastrar produto</span>
+                <span>CADASTRAR PRODUTOS</span>
             </Link>
             <Link style={{ textDecoration: 'none' }} to='/orcamentos'>
-                <span>Orçamentos</span>
+                <span>ORÇAMENTOS</span>
             </Link>
         </div>
     </header>
